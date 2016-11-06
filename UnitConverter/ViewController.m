@@ -8,22 +8,22 @@
 
 #import "ViewController.h"
 
-double convertUnitOneToUnitTwo(double unitOneValue) {
-    double unitTwoValue;
-    unitTwoValue = 10*unitOneValue;
-    return unitTwoValue;
+double convertTodm(double unitOneValue) {
+    double dmValue;
+    dmValue = 10*unitOneValue;
+    return dmValue;
 }
 
-double convertUnitOneToUnitThree(double unitOneValue) {
-    double unitThreeValue;
-    unitThreeValue = 100*unitOneValue;
-    return unitThreeValue;
+double convertTocm(double unitOneValue) {
+    double cmValue;
+    cmValue = 100*unitOneValue;
+    return cmValue;
 }
 
-double convertUnitOneToUnitFour(double unitOneValue) {
-    double unitFourValue;
-    unitFourValue = 1000*unitOneValue;
-    return unitFourValue;
+double convertTomm(double unitOneValue) {
+    double mmValue;
+    mmValue = 1000*unitOneValue;
+    return mmValue;
 }
 
 @interface ViewController ()
@@ -31,39 +31,39 @@ double convertUnitOneToUnitFour(double unitOneValue) {
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property (weak, nonatomic) IBOutlet UILabel *outputField;
+@property (weak, nonatomic) IBOutlet UIButton *updateButton;
 
 @end
 
 @implementation ViewController
 - (IBAction)updateButton:(id)sender {
-    NSMutableString *buffer = [NSMutableString new];
+    NSMutableString *strValue = [NSMutableString new];
     double userInput = [self.inputField.text doubleValue];
     double value = 0;
+    NSString *unit;
     switch (self.segmentController.selectedSegmentIndex) {
         case 0:
-        {
-            value = convertUnitOneToUnitTwo(userInput);
-            
-            [buffer appendString:[@(value) stringValue]];
-            [buffer appendString:@" dm"];
-        }
+            value = convertTodm(userInput);
+            unit = @" dm";
             break;
         case 1:
-        {
-            [buffer appendString:[@(value) stringValue]];
-            [buffer appendString:@" cm"];
-            
-        }
+            value = convertTocm(userInput);
+            unit = @" cm";
             break;
         case 2:
-        {
-            [buffer appendString:[@(value) stringValue]];
-            [buffer appendString:@" mm"];
-            
-        }
+            value = convertTomm(userInput);
+            unit = @" mm";
             break;
     }
-    self.outputField.text = buffer;
+    [strValue appendString:[@(value) stringValue]];
+    [strValue appendString: unit];
+    self.outputField.text = strValue;
+}
+
+- (IBAction)resetButton:(id)sender {
+    self.segmentController.selectedSegmentIndex = 0;
+    [self.outputField setText:(@"Click Update for the answer")];
+    [self.inputField setText:(@"")];
 }
 
 - (void)viewDidLoad {

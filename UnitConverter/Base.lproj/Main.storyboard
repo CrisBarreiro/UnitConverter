@@ -17,6 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a number" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3f-MV-aLU">
+                                <rect key="frame" x="38" y="131" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="meters" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpL-ua-WCj">
                                 <rect key="frame" x="240" y="134" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -31,37 +36,72 @@
                                     <segment title="millimeters"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-re-J0h">
-                                <rect key="frame" x="20" y="235" width="280" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndj-re-J0h">
+                                <rect key="frame" x="38" y="235" width="58" height="30"/>
                                 <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="updateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRc-oi-XJA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click Update for the answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fh-X3-Ytl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Click Update for the answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="6Fh-X3-Ytl">
                                 <rect key="frame" x="0.0" y="273" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D3f-MV-aLU">
-                                <rect key="frame" x="38" y="131" width="184" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t8-Gq-l8T">
+                                <rect key="frame" x="248" y="235" width="52" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fag-2O-b9G"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bfx-KB-vv9">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zBg-wj-qp0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="H51-qZ-KoF">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="E7y-Tg-iAd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                        <subviews>
+                                                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caa-BN-cSo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                                <items>
+                                                                    <navigationItem title="Unit Conversion Tool" id="nLy-Yt-n66"/>
+                                                                </items>
+                                                            </navigationBar>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bfx-KB-vv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4zX-PG-QbA"/>
+                            <constraint firstItem="5E9-0H-do2" firstAttribute="leading" secondItem="Ndj-re-J0h" secondAttribute="leading" id="8Tj-vg-3gt"/>
                             <constraint firstItem="bpL-ua-WCj" firstAttribute="trailing" secondItem="5E9-0H-do2" secondAttribute="trailing" id="Acg-hI-H40"/>
+                            <constraint firstItem="6Fh-X3-Ytl" firstAttribute="top" secondItem="Ndj-re-J0h" secondAttribute="bottom" constant="8" id="Agq-nn-L1M"/>
                             <constraint firstItem="5E9-0H-do2" firstAttribute="leading" secondItem="D3f-MV-aLU" secondAttribute="leading" id="BIf-2T-Yf0"/>
                             <constraint firstItem="Ndj-re-J0h" firstAttribute="top" secondItem="5E9-0H-do2" secondAttribute="bottom" constant="15" id="Bw2-Di-gLZ"/>
                             <constraint firstItem="6Fh-X3-Ytl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="FSN-hV-sel"/>
+                            <constraint firstItem="6Fh-X3-Ytl" firstAttribute="top" secondItem="5t8-Gq-l8T" secondAttribute="bottom" constant="8" id="FUb-eg-HLH"/>
                             <constraint firstItem="6Fh-X3-Ytl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HGJ-Xc-W6C"/>
                             <constraint firstItem="5E9-0H-do2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kiv-cT-Abh"/>
                             <constraint firstItem="Ndj-re-J0h" firstAttribute="top" secondItem="D3f-MV-aLU" secondAttribute="bottom" constant="74" id="KvD-I7-mKj"/>
-                            <constraint firstItem="6Fh-X3-Ytl" firstAttribute="top" secondItem="Ndj-re-J0h" secondAttribute="bottom" constant="8" id="MWD-lw-Tpx"/>
-                            <constraint firstItem="Ndj-re-J0h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OBS-ph-AVe"/>
                             <constraint firstItem="bpL-ua-WCj" firstAttribute="leading" secondItem="D3f-MV-aLU" secondAttribute="trailing" constant="18" id="QJH-YC-ap7"/>
+                            <constraint firstItem="bfx-KB-vv9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VpN-ld-5G3"/>
+                            <constraint firstAttribute="trailing" secondItem="bfx-KB-vv9" secondAttribute="trailing" id="lNe-Ws-KSJ"/>
+                            <constraint firstItem="5t8-Gq-l8T" firstAttribute="leading" secondItem="Ndj-re-J0h" secondAttribute="trailing" constant="48" id="mNK-5j-Kbj"/>
+                            <constraint firstItem="5t8-Gq-l8T" firstAttribute="trailing" secondItem="5E9-0H-do2" secondAttribute="trailing" id="rkC-gM-Xbj"/>
+                            <constraint firstItem="5t8-Gq-l8T" firstAttribute="top" secondItem="bpL-ua-WCj" secondAttribute="bottom" constant="80" id="tAY-ZH-z6Y"/>
                             <constraint firstItem="Ndj-re-J0h" firstAttribute="top" secondItem="bpL-ua-WCj" secondAttribute="bottom" constant="79" id="thU-Zg-PZw"/>
                         </constraints>
                     </view>
@@ -69,6 +109,7 @@
                         <outlet property="inputField" destination="D3f-MV-aLU" id="IgI-WO-OTk"/>
                         <outlet property="outputField" destination="6Fh-X3-Ytl" id="DvK-7r-SzT"/>
                         <outlet property="segmentController" destination="5E9-0H-do2" id="J8I-xI-lD1"/>
+                        <outlet property="updateButton" destination="Ndj-re-J0h" id="ni2-Ym-Unq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
